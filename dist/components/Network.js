@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Typography, Icon } from 'antd';
+var Text = Typography.Text;
+
 
 export default function Network(_ref) {
   var networkId = _ref.networkId;

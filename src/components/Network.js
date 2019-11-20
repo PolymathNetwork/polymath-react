@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { Typography, Icon } from 'antd'
+const { Text } = Typography
 
 export default function Network({networkId}) {
   const networks = {
