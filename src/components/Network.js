@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default function Network({networkId}) {
   const networks = {
     0: 'Disconnected',

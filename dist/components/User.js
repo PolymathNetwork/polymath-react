@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function User(_ref) {
   var walletAddress = _ref.walletAddress;
 

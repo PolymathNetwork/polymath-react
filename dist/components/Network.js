@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Network(_ref) {
   var networkId = _ref.networkId;
 
