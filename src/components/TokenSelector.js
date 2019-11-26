@@ -13,7 +13,7 @@ export default function TokenSelector({tokenSelectOpts, onChange}) {
         paddingBottom: 20,
         width: '100%'
       }}>
-        Once you select a token, you will be able to manage administrators and operators of various Security Token features
+        Once you select a token, you will be able to manage various Security Token features.
       </Text>
       <Select
         autoFocus
