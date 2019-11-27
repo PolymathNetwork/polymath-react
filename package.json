@@ -9,7 +9,7 @@
     "build": "babel src --out-dir dist/ --presets react-app/prod "
   },
   "dependencies": {
-    "@polymathnetwork/sdk": "2.0.1-beta.55",
+    "@polymathnetwork/sdk": "2.0.1-beta.65",
     "antd": "^3.25.2",
     "babel-cli": "6",
     "babel-preset-react-app": "3",
