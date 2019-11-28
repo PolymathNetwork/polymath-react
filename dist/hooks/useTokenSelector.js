@@ -8,6 +8,8 @@ import React, { useEffect, useState } from 'react';
 import TokenSelector from '../components/TokenSelector';
 
 export default function useTokenSelector(sdk, walletAddress) {
+  var _this = this;
+
   var _useState = useState(null),
       _useState2 = _slicedToArray(_useState, 2),
       error = _useState2[0],
@@ -26,8 +28,16 @@ export default function useTokenSelector(sdk, walletAddress) {
   var opts = tokens.map(function (token, i) {
     return { label: token.symbol, value: i };
   });
+  var callback = function callback() {};
   var onChange = function onChange(index) {
-    return setIndex(index);
+    setIndex(index);
+    console.log('calling callback', callback);
+    callback();
+  };
+
+  var subscribe = function subscribe(callback) {
+    console.log('subscribing with', callback);
+    _this.callback = callback;
   };
 
   // Fetch tokens
@@ -82,6 +92,7 @@ export default function useTokenSelector(sdk, walletAddress) {
     error: error,
     tokenSelector: React.createElement(TokenSelector, { tokenSelectOpts: opts, onChange: onChange }),
     tokens: tokens,
-    tokenIndex: index
+    tokenIndex: index,
+    subscribe: subscribe
   };
 }

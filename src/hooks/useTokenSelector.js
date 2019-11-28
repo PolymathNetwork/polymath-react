@@ -6,7 +6,17 @@ export default function useTokenSelector(sdk, walletAddress) {
   let [tokens, setTokens] = useState([])
   let [index, setIndex] = useState(null)
   let opts = tokens.map((token, i) => ({label: token.symbol, value: i}))
-  let onChange = (index) => setIndex(index)
+  let callback = () => {}
+  let onChange = (index) => {
+    setIndex(index)
+    console.log('calling callback', callback)
+    callback()
+  }
+
+  const subscribe = (callback) => {
+    console.log('subscribing with', callback)
+    this.callback = callback
+  }
 
   // Fetch tokens
   useEffect(() => {
@@ -30,6 +40,7 @@ export default function useTokenSelector(sdk, walletAddress) {
     error,
     tokenSelector: <TokenSelector tokenSelectOpts={opts} onChange={onChange} />,
     tokens,
-    tokenIndex: index
+    tokenIndex: index,
+    subscribe
   }
 }

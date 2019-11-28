@@ -24,7 +24,7 @@ function TokenSelector(_ref) {
           paddingBottom: 20,
           width: '100%'
         } },
-      'Once you select a token, you will be able to manage administrators and operators of various Security Token features'
+      'Once you select a token, you will be able to manage various Security Token features.'
     ),
     React.createElement(
       Select,
