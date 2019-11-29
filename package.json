@@ -9,10 +9,12 @@
     "build": "babel src --out-dir dist/ --presets react-app/prod "
   },
   "dependencies": {
+    "babel-cli": "6",
+    "babel-preset-react-app": "3"
+  },
+  "peerDependencies": {
     "@polymathnetwork/sdk": "2.0.1-beta.65",
     "antd": "^3.25.2",
-    "babel-cli": "6",
-    "babel-preset-react-app": "3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   }
