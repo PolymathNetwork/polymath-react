@@ -47,7 +47,7 @@ export default function usePolymathSdk() {
               case 5:
                 walletAddress = _context.sent;
 
-                if ([-1, 1, 5, 42].includes(networkId)) {
+                if (Object.keys(networkConfigs).includes(networkId)) {
                   _context.next = 9;
                   break;
                 }
