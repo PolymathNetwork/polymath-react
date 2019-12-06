@@ -29,8 +29,8 @@ export default function usePolymathSdk() {
     async function init() {
       const networkId = await browserUtils.getNetworkId()
       const walletAddress = await browserUtils.getCurrentAddress()
-      if (!Object.keys(networkConfigs).includes(networkId)) {
-        setError('Please switch to either Main, Kovan or Goerli network')
+      if (![-1, ...Object.keys(networkConfigs)].includes(networkId)) {
+        setError('Please switch to one of these networks: Mainnet, Kovan, Goerli or localhost')
         return
       }
 
