@@ -27,9 +27,9 @@ export default function useTokenSelector(sdk, walletAddress) {
 
   return {
     error,
-    tokenSelector: (props) => <TokenSelector tokenSelectOpts={opts} onChange={(index) => {
+    tokenSelector: (props = {}) => <TokenSelector tokenSelectOpts={opts} onChange={(index) => {
       setIndex(index)
-      props.onTokenSelect && props.onTokenSelect(index)
+      props && props.onTokenSelect && props.onTokenSelect(index)
     }} />,
     tokens,
     tokenIndex: index

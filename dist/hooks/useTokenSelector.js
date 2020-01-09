@@ -77,10 +77,11 @@ export default function useTokenSelector(sdk, walletAddress) {
 
   return {
     error: error,
-    tokenSelector: function tokenSelector(props) {
+    tokenSelector: function tokenSelector() {
+      var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       return React.createElement(TokenSelector, { tokenSelectOpts: opts, onChange: function onChange(index) {
           setIndex(index);
-          props.onTokenSelect && props.onTokenSelect(index);
+          props && props.onTokenSelect && props.onTokenSelect(index);
         } });
     },
     tokens: tokens,
